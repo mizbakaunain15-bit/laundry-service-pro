@@ -28,7 +28,7 @@ const API = `${BACKEND_URL}/api`;
 // Business Info
 const BUSINESS = {
   name: "WashCare Pro",
-  phone: "8310334978",
+  phone: "7676912951",
   address: "Barline Road, Hassa",
   whatsappMessage: "Hello WashCare Pro, I need help with my washing machine."
 };
@@ -40,7 +40,7 @@ const IMAGES = {
   installation: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/a1d3ad65d88eab33af0a621b1a79e78f5a84b9709eedb1b1766f3dc1b63545c2.png",
   amc: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/27225dcd92b651cadf3e5f12e4e1fe7ebe527dd5b13906747626111bcf68396f.png",
   background: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/0c7b2bb7ffcd3d4af3c3f7c5a10067fcf0768f6074a23e07587aae52c45507b0.png",
-  qrCode: "https://customer-assets.emergentagent.com/job_028737a3-8ff5-4cb6-bdf2-f283ee27469a/artifacts/mcnpgm3u_qr-code.jpg.jpeg"
+  qrCode: "https://customer-assets.emergentagent.com/job_laundry-service-pro/artifacts/swn1pnxo_qr-code.jpg.jpeg"
 };
 
 // Animation variants
@@ -608,7 +608,7 @@ const PaymentSection = () => {
               Scan to Pay
             </h3>
             <p className="text-slate-600 mb-4">
-              UPI: {BUSINESS.phone}@phonepe
+              UPI: zeeshanafrin786-2@okhdfcbank
             </p>
             
             <div className="flex justify-center gap-4">
