@@ -1,34 +1,144 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* WashCare Pro - Custom Styles */
+
+.font-outfit {
+    font-family: 'Outfit', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
+.font-manrope {
+    font-family: 'Manrope', sans-serif;
+}
+
+/* Smooth scroll offset for fixed header */
+section[id] {
+    scroll-margin-top: 80px;
+}
+
+/* Hero gradient overlay */
+.hero-gradient {
+    background: linear-gradient(135deg, rgba(0, 85, 255, 0.05) 0%, rgba(255, 184, 0, 0.05) 100%);
+}
+
+/* Service card hover effect */
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* WhatsApp button pulse animation */
+@keyframes pulse-whatsapp {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
     }
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
+.whatsapp-pulse {
+    animation: pulse-whatsapp 2s infinite;
+}
+
+/* QR Code container */
+.qr-container {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonial card */
+.testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0055FF;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0044CC;
+}
+
+/* Form input focus */
+.form-input:focus {
+    outline: none;
+    border-color: #0055FF;
+    box-shadow: 0 0 0 3px rgba(0, 85, 255, 0.1);
+}
+
+/* Primary button hover */
+.btn-primary {
+    background: #0055FF;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #0044CC;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 85, 255, 0.3);
+}
+
+/* Secondary button */
+.btn-secondary {
+    background: #FFB800;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: #E5A600;
+    transform: translateY(-2px);
+}
+
+/* Feature icon container */
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
+    background: linear-gradient(135deg, #0055FF 0%, #0066FF 100%);
     color: white;
 }
 
-.App-link {
-    color: #61dafb;
+/* Stats counter */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0055FF;
+    font-family: 'Outfit', sans-serif;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Footer links */
+.footer-link {
+    color: #94A3B8;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #FFB800;
 }
