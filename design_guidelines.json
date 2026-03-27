@@ -1,0 +1,130 @@
+{
+  "theme": "light",
+  "archetype": "4_swiss_high_contrast",
+  "design_philosophy": "Authoritative, clean, and highly functional. The design emphasizes trust and rapid conversion for a local home service business. Bold true-blue accents evoke cleanliness and reliability, while high-contrast yellow/orange CTAs drive immediate action (calling or booking).",
+  "colors": {
+    "primary": "#0055FF",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#FFB800",
+    "secondary_foreground": "#000000",
+    "background": "#FFFFFF",
+    "surface": "#F8FAFC",
+    "surface_foreground": "#0F172A",
+    "border": "#E2E8F0",
+    "accent_green": "#25D366",
+    "footer_bg": "#0B1120",
+    "footer_text": "#F8FAFC"
+  },
+  "typography": {
+    "fonts": {
+      "heading": "'Outfit', sans-serif",
+      "body": "'Manrope', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight",
+      "h2": "text-3xl md:text-4xl font-bold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-semibold",
+      "h4": "text-xl font-semibold",
+      "body": "text-base md:text-lg leading-relaxed",
+      "small": "text-sm tracking-wide"
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-4 md:px-8 lg:px-12",
+    "section_spacing": "py-16 md:py-24 lg:py-32",
+    "border_radius": "rounded-2xl",
+    "surface_style": "bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300"
+  },
+  "components": {
+    "header": {
+      "style": "sticky top-0 z-50 backdrop-blur-xl bg-white/80 border-b border-slate-200",
+      "elements": ["Logo", "Navigation Links", "Call Now CTA"]
+    },
+    "hero": {
+      "layout": "Grid 1 md:2 columns. Left: Text & CTAs. Right: Image.",
+      "image_overlay": "bg-black/10",
+      "ctas": ["Book Service (Primary)", "WhatsApp (Accent Green)"]
+    },
+    "services_bento": {
+      "layout": "Grid 1 md:3 columns, gap-8.",
+      "card_style": "Flat background, 1px subtle border, hover:-translate-y-1, image at top, text below with generous p-6 padding."
+    },
+    "booking_form": {
+      "style": "Shadcn form components. High contrast input fields. Clean layout. Use background abstract image softly blended.",
+      "fields": ["Name", "Phone", "Service Required", "Message"]
+    },
+    "payment_section": {
+      "layout": "Card centered or side-by-side with instructions.",
+      "qr_code": "Display the provided QR clearly with a border and scanning instructions."
+    },
+    "floating_whatsapp": {
+      "position": "fixed bottom-6 right-6 z-50",
+      "style": "bg-[#25D366] text-white rounded-full p-4 shadow-lg hover:scale-105 transition-transform"
+    },
+    "footer": {
+      "style": "bg-slate-950 text-white py-20",
+      "layout": "Grid layout for Address, Contact, Links"
+    }
+  },
+  "animations": {
+    "hero_load": "Fade up, staggered elements.",
+    "scroll_reveal": "Framer motion whileInView fade and slight translate-y.",
+    "hover_states": "Buttons scale 1.02, cards elevate with shadow."
+  },
+  "assets": {
+    "icons": {
+      "library": "lucide-react",
+      "usage": "Use for service features, phone icons, checkmarks, WhatsApp."
+    },
+    "images": {
+      "hero_technician": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/9ed359e8a79885c6f1781ea48d0c162a2fe0b534969c0c7c5292e5f895df5ce2.png",
+        "description": "Technician fixing a modern white washing machine.",
+        "usage": "Hero section main visual"
+      },
+      "service_repair": {
+        "url": "https://images.unsplash.com/photo-1662220984920-3bd1f88e846f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MTN8MHwxfHNlYXJjaHwyfHx3YXNoaW5nJTIwbWFjaGluZSUyMHJlcGFpcnxlbnwwfHx8fDE3NzQ2MDMyMTJ8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Clean white washing machine.",
+        "usage": "Repair service card"
+      },
+      "service_installation": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/a1d3ad65d88eab33af0a621b1a79e78f5a84b9709eedb1b1766f3dc1b63545c2.png",
+        "description": "Technician installing washing machine.",
+        "usage": "Installation service card"
+      },
+      "service_amc": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/27225dcd92b651cadf3e5f12e4e1fe7ebe527dd5b13906747626111bcf68396f.png",
+        "description": "Technician hands holding a wrench near a modern washing machine.",
+        "usage": "AMC service card"
+      },
+      "water_abstract_bg": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/0c7b2bb7ffcd3d4af3c3f7c5a10067fcf0768f6074a23e07587aae52c45507b0.png",
+        "description": "Abstract water ripples and pure white.",
+        "usage": "Background for booking section or testimonials to add texture"
+      },
+      "payment_qr": {
+        "url": "https://customer-assets.emergentagent.com/job_028737a3-8ff5-4cb6-bdf2-f283ee27469a/artifacts/mcnpgm3u_qr-code.jpg.jpeg",
+        "description": "User provided PhonePe/GPay QR code.",
+        "usage": "Payment Section"
+      }
+    }
+  },
+  "content_data": {
+    "business_name": "WashCare Pro",
+    "phone": "8310334978",
+    "address": "Barline Road, Hassa",
+    "whatsapp_message": "Hello WashCare Pro, I need help with my washing machine."
+  },
+  "instructions_to_main_agent": [
+    "Install specific fonts: @fontsource/outfit and @fontsource/manrope",
+    "Install lucide-react for icons.",
+    "Install framer-motion for animations.",
+    "Implement the landing page with mobile-first responsive design.",
+    "Use Shadcn UI for buttons, inputs, form, and cards.",
+    "Ensure all interactive elements have data-testid attributes for testing.",
+    "Build a floating WhatsApp button fixed to the bottom right.",
+    "In the Payment section, prominently display the provided QR code alongside simple instructions.",
+    "Create a clean booking form with Name, Phone, Service Dropdown, and Message."
+  ]
+}
