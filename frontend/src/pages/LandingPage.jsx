@@ -27,10 +27,13 @@ const API = `${BACKEND_URL}/api`;
 
 // Business Info
 const BUSINESS = {
-  name: "WashCare Pro",
+  name: "Hassan Service 24x7",
   phone: "7676912951",
-  address: "Barline Road, Hassa",
-  whatsappMessage: "Hello WashCare Pro, I need help with my washing machine."
+  address: "Near Basaveshwara Kalyana Mantapa, Pension Mohalla Police Station Road, Hosaline Road, Hassan, Karnataka 573201",
+  shortAddress: "Hosaline Road, Hassan",
+  timings: "Mon - Sun : 07:00 AM - 08:30 PM",
+  whatsappMessage: "Hello Hassan Service 24x7, I need help with my washing machine.",
+  mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.123456789!2d76.0999!3d13.0068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sHassan%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
 };
 
 // Images from design guidelines
@@ -40,8 +43,20 @@ const IMAGES = {
   installation: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/a1d3ad65d88eab33af0a621b1a79e78f5a84b9709eedb1b1766f3dc1b63545c2.png",
   amc: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/27225dcd92b651cadf3e5f12e4e1fe7ebe527dd5b13906747626111bcf68396f.png",
   background: "https://static.prod-images.emergentagent.com/jobs/028737a3-8ff5-4cb6-bdf2-f283ee27469a/images/0c7b2bb7ffcd3d4af3c3f7c5a10067fcf0768f6074a23e07587aae52c45507b0.png",
-  qrCode: "https://customer-assets.emergentagent.com/job_laundry-service-pro/artifacts/swn1pnxo_qr-code.jpg.jpeg"
+  qrCode: "https://customer-assets.emergentagent.com/job_laundry-service-pro/artifacts/swn1pnxo_qr-code.jpg.jpeg",
+  // Additional gallery images
+  gallery1: "https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?w=800&q=80",
+  gallery2: "https://images.pexels.com/photos/5591463/pexels-photo-5591463.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+  gallery3: "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=800&q=80",
+  gallery4: "https://images.pexels.com/photos/4700389/pexels-photo-4700389.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
 };
+
+// YouTube video IDs for washing machine repair tutorials
+const VIDEOS = [
+  { id: "yDDPjNNSCrA", title: "Ultimate DIY Washer Repair Guide" },
+  { id: "wEA5XHrTwSM", title: "Dead Washing Machine Repair" },
+  { id: "XBllmAjrjbQ", title: "Front Load Washer Fixes" }
+];
 
 // Animation variants
 const fadeInUp = {
@@ -72,13 +87,14 @@ const Header = () => {
               <Wrench className="w-6 h-6 text-white" />
             </div>
             <span className="font-outfit text-xl md:text-2xl font-bold text-slate-900">
-              WashCare <span className="text-[#0055FF]">Pro</span>
+              Hassan <span className="text-[#0055FF]">Service 24x7</span>
             </span>
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium" data-testid="nav-services">Services</a>
+            <a href="#gallery" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium" data-testid="nav-gallery">Gallery</a>
             <a href="#booking" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium" data-testid="nav-booking">Book Now</a>
             <a href="#payment" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium" data-testid="nav-payment">Payment</a>
             <a href="#contact" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium" data-testid="nav-contact">Contact</a>
@@ -116,6 +132,7 @@ const Header = () => {
           >
             <nav className="flex flex-col gap-4">
               <a href="#services" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium py-2">Services</a>
+              <a href="#gallery" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium py-2">Gallery</a>
               <a href="#booking" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium py-2">Book Now</a>
               <a href="#payment" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium py-2">Payment</a>
               <a href="#contact" className="text-slate-600 hover:text-[#0055FF] transition-colors font-medium py-2">Contact</a>
@@ -158,7 +175,7 @@ const HeroSection = () => {
             
             <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed">
               Fast, reliable, and affordable washing machine repair services at your doorstep. 
-              Same-day service available in Hassa and surrounding areas.
+              <span className="font-semibold text-[#0055FF]"> 24x7 Service Available</span> in Hassan and surrounding areas.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -343,8 +360,8 @@ const WhyChooseUs = () => {
   const features = [
     {
       icon: Clock,
-      title: "Same Day Service",
-      description: "Quick response and same-day repair service for urgent issues"
+      title: "24x7 Service Available",
+      description: "Round the clock emergency repair service for your convenience"
     },
     {
       icon: Shield,
@@ -373,10 +390,10 @@ const WhyChooseUs = () => {
           className="text-center mb-16"
         >
           <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-            Why Choose WashCare Pro?
+            Why Choose Hassan Service 24x7?
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            We are committed to providing the best washing machine repair service in Hassa
+            We are committed to providing the best washing machine repair service in Hassan
           </p>
         </motion.div>
 
@@ -637,19 +654,19 @@ const TestimonialsSection = () => {
   const testimonials = [
     {
       name: "Rajesh Kumar",
-      location: "Hassa",
+      location: "Hassan",
       rating: 5,
       text: "Excellent service! The technician came within an hour and fixed my washing machine quickly. Very professional and reasonable pricing."
     },
     {
       name: "Priya Sharma",
-      location: "Barline Road",
+      location: "Hosaline Road",
       rating: 5,
-      text: "I have been using WashCare Pro for annual maintenance. Their AMC plan is worth every rupee. Highly recommended!"
+      text: "I have been using Hassan Service 24x7 for annual maintenance. Their AMC plan is worth every rupee. Highly recommended!"
     },
     {
       name: "Mohammed Ali",
-      location: "Hassa Town",
+      location: "Hassan Town",
       rating: 5,
       text: "Quick response, genuine parts, and fair pricing. The best washing machine repair service in our area."
     }
@@ -668,7 +685,7 @@ const TestimonialsSection = () => {
             What Our Customers Say
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Trusted by hundreds of families in Hassa and surrounding areas
+            Trusted by hundreds of families in Hassan and surrounding areas
           </p>
         </motion.div>
 
@@ -706,6 +723,213 @@ const TestimonialsSection = () => {
   );
 };
 
+// Gallery Section
+const GallerySection = () => {
+  const galleryImages = [
+    { src: IMAGES.gallery1, alt: "Washing machine service" },
+    { src: IMAGES.gallery2, alt: "Expert technician at work" },
+    { src: IMAGES.gallery3, alt: "Modern washing machine" },
+    { src: IMAGES.gallery4, alt: "Professional repair service" },
+    { src: IMAGES.repair, alt: "Washing machine repair" },
+    { src: IMAGES.installation, alt: "Installation service" }
+  ];
+
+  return (
+    <section id="gallery" className="py-16 md:py-24 bg-slate-50" data-testid="gallery-section">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Our Work Gallery
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            See our expert technicians in action - Quality service guaranteed
+          </p>
+        </motion.div>
+
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 gap-4"
+        >
+          {galleryImages.map((image, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className="relative overflow-hidden rounded-2xl aspect-square group"
+              data-testid={`gallery-image-${index}`}
+            >
+              <img 
+                src={image.src}
+                alt={image.alt}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                <p className="text-white font-medium">{image.alt}</p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// Video Section
+const VideoSection = () => {
+  return (
+    <section className="py-16 md:py-24" data-testid="video-section">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Helpful Tips & Videos
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Learn how to maintain your washing machine and common troubleshooting tips
+          </p>
+        </motion.div>
+
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          className="grid md:grid-cols-3 gap-8"
+        >
+          {VIDEOS.map((video, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInUp}
+              className="rounded-2xl overflow-hidden shadow-lg bg-white"
+              data-testid={`video-${index}`}
+            >
+              <div className="relative aspect-video bg-slate-200">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${video.id}`}
+                  title={video.title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0"
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className="font-semibold text-slate-900">{video.title}</h3>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+// Location Map Section
+const LocationSection = () => {
+  return (
+    <section className="py-16 md:py-24 bg-slate-50" data-testid="location-section">
+      <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <h2 className="font-outfit text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Visit Our Office
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            {BUSINESS.address}
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid md:grid-cols-2 gap-8 items-center"
+        >
+          {/* Map */}
+          <div className="rounded-2xl overflow-hidden shadow-xl h-[400px]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31009.10297867!2d76.08!3d13.0068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4d79a7a7f1d5d%3A0x7c0a40f4a5a5a5a5!2sHassan%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Hassan Service 24x7 Location"
+            ></iframe>
+          </div>
+
+          {/* Address Card */}
+          <div className="bg-white rounded-2xl p-8 shadow-xl">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-[#0055FF] rounded-xl flex items-center justify-center">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+              <h3 className="font-outfit text-xl font-semibold text-slate-900">
+                Our Location
+              </h3>
+            </div>
+            
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold text-slate-900 mb-1">Hassan Service 24x7</p>
+                <p className="text-slate-600">
+                  Near Basaveshwara Kalyana Mantapa,<br />
+                  Pension Mohalla Police Station Road,<br />
+                  Hosaline Road, Hassan,<br />
+                  Karnataka 573201
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-600">
+                <Phone className="w-5 h-5 text-[#0055FF]" />
+                <a href={`tel:${BUSINESS.phone}`} className="hover:text-[#0055FF]">
+                  +91 {BUSINESS.phone}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-3 text-slate-600">
+                <Clock className="w-5 h-5 text-[#0055FF]" />
+                <span>{BUSINESS.timings}</span>
+              </div>
+
+              <div className="pt-4">
+                <a
+                  href="https://maps.google.com/?q=Hassan+Karnataka+573201"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#0055FF] text-white px-6 py-3 rounded-full font-semibold hover:bg-[#0044CC] transition-all"
+                  data-testid="get-directions-btn"
+                >
+                  <MapPin className="w-5 h-5" />
+                  Get Directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
 // Footer Section
 const Footer = () => {
   return (
@@ -719,12 +943,16 @@ const Footer = () => {
                 <Wrench className="w-6 h-6 text-white" />
               </div>
               <span className="font-outfit text-2xl font-bold">
-                WashCare <span className="text-[#FFB800]">Pro</span>
+                Hassan <span className="text-[#FFB800]">Service 24x7</span>
               </span>
             </div>
             <p className="text-slate-400 mb-6">
-              Your trusted partner for washing machine repair and maintenance services in Hassa.
+              Your trusted partner for washing machine repair and maintenance services in Hassan. Available 24x7 for emergency repairs.
             </p>
+            <div className="inline-flex items-center gap-2 bg-[#FFB800]/20 text-[#FFB800] px-4 py-2 rounded-full text-sm font-medium">
+              <Clock className="w-4 h-4" />
+              24x7 Emergency Service
+            </div>
           </div>
 
           {/* Contact Info */}
@@ -743,12 +971,16 @@ const Footer = () => {
                 className="flex items-start gap-3 text-slate-400"
                 data-testid="footer-address"
               >
-                <MapPin className="w-5 h-5 mt-0.5" />
-                <span>{BUSINESS.address}</span>
+                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                <span className="text-sm">
+                  Near Basaveshwara Kalyana Mantapa,<br />
+                  Pension Mohalla Police Station Road,<br />
+                  Hosaline Road, Hassan - 573201
+                </span>
               </div>
               <div className="flex items-center gap-3 text-slate-400">
                 <Clock className="w-5 h-5" />
-                <span>Open 7 days: 8AM - 8PM</span>
+                <span>{BUSINESS.timings}</span>
               </div>
             </div>
           </div>
@@ -760,6 +992,7 @@ const Footer = () => {
               <a href="#services" className="block text-slate-400 hover:text-[#FFB800] transition-colors">Services</a>
               <a href="#booking" className="block text-slate-400 hover:text-[#FFB800] transition-colors">Book Service</a>
               <a href="#payment" className="block text-slate-400 hover:text-[#FFB800] transition-colors">Payment</a>
+              <a href="#gallery" className="block text-slate-400 hover:text-[#FFB800] transition-colors">Gallery</a>
               <a 
                 href={`https://wa.me/91${BUSINESS.phone}`}
                 target="_blank"
@@ -774,7 +1007,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-800 mt-12 pt-8 text-center">
           <p className="text-slate-500 text-sm">
-            © 2024 WashCare Pro. All rights reserved.
+            © 2024 Hassan Service 24x7. All rights reserved. | Serving Hassan & Surrounding Areas
           </p>
         </div>
       </div>
@@ -808,9 +1041,12 @@ const LandingPage = () => {
       <HeroSection />
       <ServicesSection />
       <WhyChooseUs />
+      <GallerySection />
+      <VideoSection />
       <BookingSection />
       <PaymentSection />
       <TestimonialsSection />
+      <LocationSection />
       <Footer />
       <FloatingWhatsApp />
     </div>
